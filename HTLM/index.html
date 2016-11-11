@@ -5,6 +5,13 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>  		
+		<script type="text/javascript" src="js/moment.js"></script>
+		<script type="text/javascript" src="js/transition.js"></script>
+		<script type="text/javascript" src="js/collapse.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>		
+		<script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+		<script type="text/javascript" src="js/pt.js"></script>
 
 	</head>
 	<body>
@@ -22,36 +29,92 @@
 
 								  <button type="button" class="btn btn-info " data-toggle="modal" data-target="#myModal">Tarefa</button>
 
-								  <!-- Modal -->
-								  <div class="modal fade" id="myModal" role="dialog">
-								    <div class="modal-dialog">
-								    
-								      <!-- Modal content-->
-								      <div class="modal-content">
-								        <div class="modal-header">
-								          <button type="button" class="close" data-dismiss="modal">&times;</button>
-								          <h4 class="modal-title">Nova Tarefa</h4>
-								        </div>
-								        <div class="modal-body">
-								        	 <div class="form-group">
-								        	  <label for="usr">Nome:</label>
-  <input type="text" class="form-control" id="usr">
-  <label for="comment">Descricão:</label>
-  <textarea class="form-control" rows="5" id="comment"></textarea>
-</div>
-								          <p>Some text in the modal.</p>
-								        </div>
-								        <div class="modal-footer">
-								          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-								        </div>
-								      </div>
-								      
-								    </div>
-								  </div>
+  <!-- Modal TASK-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Nova Tarefa</h4>
+        </div>
+        <div class="modal-body">
+        	<div class="form-group">
+	        	<label for="usr">Nome:</label>
+			  	<input type="text" class="form-control" id="usr">
+			  	<label for="comment">Descricão:</label>
+			  	<textarea class="form-control" rows="5" id="comment"></textarea>
+			</div>
+
+			<div class="form-group">
+				<label for="usr">Data de inicio:</label>
+                <div class='input-group date' id='datetimepicker1'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+	            $(function () {
+	                $('#datetimepicker1').datetimepicker({
+	                    locale: 'pt'
+	                });
+	            });
+        	</script>
+
+            <div class="form-group">
+				<label for="usr">Data de fim:</label>
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+	            $(function () {
+	                $('#datetimepicker2').datetimepicker({
+	                    locale: 'pt'
+	                });
+	            });
+        	</script>
+
+            <div class="form-group">
+				<label for="usr">Lembrete:</label>
+                <div class='input-group date' id='datetimepicker3'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-bell"></span>
+                    </span>
+                </div>
+            </div>
+
+            <script type="text/javascript">
+	            $(function () {
+	                $('#datetimepicker3').datetimepicker({
+	                    locale: 'pt'
+	                });
+	            });
+        	</script>
+
+
+          	<p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 								  <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal2">Categoria</button>
 
-								  <!-- Modal -->
+								  <!-- Modal CATEGORIA-->
 								  <div class="modal fade" id="myModal2" role="dialog">
 								    <div class="modal-dialog">
 								    
@@ -107,8 +170,5 @@
 		</div>
 
 
-
-		<script src="js/jquery-3.1.1.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
